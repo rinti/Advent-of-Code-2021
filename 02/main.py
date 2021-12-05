@@ -20,12 +20,8 @@ with open("./input.txt") as f:
     for line in f.readlines():
         dir, amount = line.split(" ")
         dict[dir] += int(amount)
-        if dir in ["down", "up"]:
-            dict["aim"] = (
-                dict["aim"] + int(amount) if dir == "up" else dict["aim"] - int(amount)
-            )
         if dir == "forward":
-            dict["depth"] += dict["aim"] * int(amount)
+            dict["depth"] += (dict["down"] - dict["up"]) * int(amount)
 
     part_one_solution(dict)
     part_two_solution(dict)
