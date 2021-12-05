@@ -14,7 +14,6 @@ def part_two_solution(dict):
 
 with open("./input.txt") as f:
     dict = defaultdict(int)
-    dict["aim"] = 0
     dict["depth"] = 0
 
     for line in f.readlines():
